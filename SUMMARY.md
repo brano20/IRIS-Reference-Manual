@@ -13,3 +13,6 @@
 
 * [Introduction](data-management/introduction.md)
 
+## Time Series Modeling
+
+* [Introduction](time-series-modeling/introduction.md)
