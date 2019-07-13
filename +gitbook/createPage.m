@@ -25,7 +25,8 @@ c = [ c, newline( ), newline( ), ...
       '## Alphabetical List of Functions ##' ];
 
 list = fieldnames(helpStruct);
-list = sort(list);
+[~, index] = sort(lower(list));
+list = list(index);
 for i = 1 : 3 %numel(list)
     name = list{i};
     c = [ c, newline( ), newline( ), ...

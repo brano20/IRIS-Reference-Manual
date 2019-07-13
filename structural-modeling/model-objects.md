@@ -145,71 +145,6 @@ Model methods:
 
 ## Alphabetical List of Functions ##
 
-### Model ### 
-__Syntax__ 
- 
-    m = Model(fileNames, ...)
- 
- 
-__Input Arguments__
- 
-* `fileNames` [ char | cellstr | string ] - File name or a list of
-multiple file names of source model files from which the new model object
-will be created; multiple source model files are simply combined all
-together.
- 
-
-__Output Arguments__
- 
-* `m` [ Model ] - New model object based on the source model file(s)
-specified in `fileNames`.
- 
- 
-__Options__
- 
- 
-__Description__
- 
- 
-__Example__
-
-
-### VAR ### 
-__Syntax__
- 
-    V = VAR(M, List, Range, ...)
- 
- 
-__Input Arguments__
- 
-* `M` [ model ] - Solved model object.
- 
-* `List` [ cellstr | char ] - List of variables selected for the VAR.
- 
-* `Range` [ numeric | char ] - Hypothetical range, including pre-sample
-initial condition, on which the VAR would be estimated.
- 
- 
-__Output Arguments__
- 
-* `V` [ VAR ] - Asymptotic reduced-form VAR for selected model variables.
- 
- 
-__Options__
- 
-* `'Order='` [ numeric | *1* ] - Order of the VAR.
- 
-* `'Constant='` [ *`true`* | `false` ] - Include in the VAR a constant
-vector derived from the steady state of the selected variables.
- 
- 
-__Description__
- 
- 
-__Example__
-
-
-
 ### acf ### 
 __Syntax__
  
@@ -313,4 +248,96 @@ retains periodicities between 4 and 40 periods (this would be between 1
 and 10 years in a quarterly model), 
  
     [C, R] = acf(m, 'Filter=', 'per>=4 & per<=40')
+
+
+
+### addToDatabank ### 
+__Syntax__
+ 
+Input arguments marked with a `~` sign may be omitted
+ 
+    D = addToDatabank(What, M, D, ...)
+    D = addToDatabank(What, M, D, Range, ...)
+ 
+ 
+__Input Arguments__
+ 
+* `What` [ char | cellstr | string ] - What model quantities to add:
+parameters, std deviations, cross-correlations.
+ 
+* `M` [ model ] - Model object whose parameters will be added to databank
+`D`.
+ 
+* `D` [ struct ] - Databank to which the model parameters will be added.
+ 
+* `~Range` [ DateWrapper ] - Date range on which time series will be
+created; needs to be specified for `Shocks`.
+ 
+ 
+__Output Arguments__
+ 
+* `D` [ struct ] - Databank with the model parameters added.
+ 
+ 
+__Description__
+ 
+Function `addToDatabank( )` adds all specified model quantities to the databank,
+`D`, as arrays with values for all parameter variants. If no input
+databank is entered, a new will be created.
+ 
+Specify one of the following to choose what model quantities to add:
+ 
+  * `'Parameters'` - add plain parameters (no std deviations or cross correlations)
+  * `'Std'` - add std deviations of model shocks
+  * `'NonzeroCorr'` - add nonzero cross-correlations of model shocks
+  * `'Corr'` - add all cross correlations of model shocks
+  * `'Shocks'` - add time series for model shocks
+  * `'Default'` - equivalent to `{'Parameters', 'Std', 'NonzeroCorr'}`
+ 
+These can be specified as case-insensitive char, strings, or combined in
+a cellstr or a string array.
+ 
+Any existing databank entries whose names coincide with the names of
+model parameters will be overwritten.
+ 
+ 
+__Example__
+ 
+    d = struct( );
+    d = addToDatabank('Parameters', m, d);
+
+
+
+### alter ### 
+__Syntax__
+ 
+    M = alter(M, N)
+ 
+ 
+__Input arguments__
+ 
+* `M` [ model ] - Model object in which the number of parameter variants
+will be changed.
+ 
+* `N` [ numeric ] - New number of model variants.
+ 
+ 
+__Output arguments__
+ 
+* `M` [ model ] - Model object with the new number of variants.
+ 
+ 
+__Description__
+ 
+If the new number of parameter variants, `N`, is greater than the current
+number of parameter variants in the model object, `M`, the last parameter
+variant (including solution matrices, if available) is copied an
+appropriate number of times.
+ 
+If the new number of parameter variants, `N`, is smaller than the current
+number of parameter variants in the model object, `M`, an appropriate
+number of parameter variants is deleted from the end.
+ 
+ 
+__Example__
 
