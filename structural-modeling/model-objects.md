@@ -129,10 +129,12 @@ Model methods:
 
 ## Alphabetical List of Functions
 
-### acf
+------------------
 
-{% hint style="info" %}
-#### `acf` Autocorrelation function
+### `acf`
+
+{% hint %}
+`acf` Autocorrelation function
 {% endhint %}
 
 **Syntax**
