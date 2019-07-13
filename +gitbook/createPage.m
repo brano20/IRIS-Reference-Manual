@@ -1,4 +1,4 @@
-function createPage(contentsFile, helpPrefix, outputFile)
+function c = createPage(contentsFile, helpPrefix, outputFile)
 
 helpStruct = gitbook.updateContentsFile(contentsFile, helpPrefix);
 
@@ -19,6 +19,19 @@ c = regexprep( c, ...
 c = regexprep( c, ...
                '( ###\n)-+', ...
                '$1\n  Function Name | Brief Description\n----------------|--------------------'); 
+
+
+c = [ c, newline( ), newline( ), ...
+      '## Alphabetical List of Functions ##' ];
+
+list = fieldnames(helpStruct);
+list = sort(list);
+for i = 1 : numel(list)
+    name = list{i};
+    c = [ c, newline( ), newline( ), ...
+          '### ', name, ' ###', ...
+          helpStruct.(name) ];
+end
 
 char2file(c, outputFile);
 
