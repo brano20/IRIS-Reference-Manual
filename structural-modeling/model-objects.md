@@ -129,11 +129,13 @@ Model methods:
 
 ## Alphabetical List of Functions
 
-------------------
+| `acf` |  |
+| :--- | :--- |
+| Autocorrelation function |  |
 
 ### `acf`
 
-{% hint %}
+{% hint style="info" %}
 `acf` Autocorrelation function
 {% endhint %}
 
@@ -209,6 +211,10 @@ A band-pass filter with user-specified lower and upper bands. The band-pass filt
 ```
 
 ### addToDatabank
+
+> ### addToDatabank
+>
+> Add to databank new information
 
 **Syntax**
 
