@@ -11,6 +11,7 @@
   * [acf](structural-modeling/model-objects/acf.md)
   * [addToDatabank](structural-modeling/model-objects/addToDatabank.md)
   * [alter](structural-modeling/model-objects/alter.md)
+  * [assign](structural-modeling/model-objects/assign.md)
   <!-- End Model -->
 * [Plan Objects](structural-modeling/plan-objects.md)
 

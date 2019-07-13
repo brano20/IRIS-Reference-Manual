@@ -1,18 +1,18 @@
 # acf #
-> Autocovariance and autocorrelation function for model variables
+Autocovariance and autocorrelation function for model variables
  
-__Syntax__
+## Syntax ##
  
     [C, R, list] = acf(model, ...)
  
  
-__Input Arguments__
+## Input Arguments ##
  
 * `model` [ model ] - A solved model object for which the autocorrelation
 function will be computed.
  
  
-__Output Arguments__
+## Output Arguments ##
  
 * `C` [ namedmat | numeric ] - Covariance matrices.
  
@@ -22,7 +22,7 @@ __Output Arguments__
 `R`.
  
  
-__Options__
+## Options ##
  
 * `ApplyTo=@all` [ cellstr | char | `@all` ] - List of variables to which
 the `Filter=` will be applied; `@all` means all variables.
@@ -47,7 +47,7 @@ with named rows and columns) or plain numeric arrays.
 variables only; `@all` means all variables.
  
  
-__Description__
+## Description ##
  
 `C` and `R` are both n-by-n-by-(p+1)-by-v matrices, where n is the
 number of measurement and transition variables (including auxiliary lags
@@ -75,7 +75,7 @@ can use the following references:
 * `'freq'` for the frequency.
 
  
-__Example__
+## Example ##
  
 A first-difference filter (i.e. computes the ACF for the first
 differences of the respective variables):
@@ -83,7 +83,7 @@ differences of the respective variables):
     [C, R] = acf(m, 'Filter=', '1-L')
  
  
-__Example__
+## Example ##
  
 The cyclical component of the Hodrick-Prescott filter with the smoothing
 parameter, \(\lambda\), set to 1,600. The formula for the filter follows
@@ -94,7 +94,7 @@ $$w(L) = \frac{\lambda}{\lambda + \frac{1}{ | (1-L)(1-L) | ^2}}$$
     [C, R] = acf(m, 'Filter=', '1600/(1600 + 1/abs((1-L)^2)^2)')
  
  
-__Example__
+## Example ##
  
 A band-pass filter with user-specified lower and upper bands. The
 band-pass filters can be defined either in frequencies or periodicities;

@@ -95,7 +95,7 @@ Model methods:
   [`resample`](resample.md)                   | Resample from the model implied distribution
   [`reporting`](reporting.md)                  | Evaluate reporting equations from within model object
   [`shockplot`](shockplot.md)                  | Short-cut for running and plotting plain shock simulation
-  [`simulate`](simulate.md)                   | Simulate model from inputasfasfdfsfafasdfaasdfasdf 
+  [`simulate`](simulate.md)                   | Simulate model
   [`solve`](solve.md)                      | Calculate first-order accurate solution of the model
   [`srf`](srf.md)                        | First-order shock response functions
   [`tolerance`](tolerance.md)                  | Get or set model-specific tolerance levels

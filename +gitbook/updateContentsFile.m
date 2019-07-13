@@ -1,13 +1,6 @@
 function [helpStruct, descriptionStruct] = updateContentsFile(contentsFile, helpPrefix)
 
-contentsFile = which(contentsFile, '-all');
-if numel(contentsFile)~=1
-    error( 'GitBook:InvalidContentsFile', ...
-           'Invalid or ambiguous contents file: %s', ...
-           contentsFile );
-end
-contentsFile = contentsFile{1};
-contentsFile = regexprep(contentsFile, '%.*', '');
+contentsFile = gitbook.whichFile(contentsFile);
 c = file2char(contentsFile);
 
 helpStruct = struct( );
@@ -28,6 +21,17 @@ return
     function description = getDescription(helpPrefix, functionName)
         helpPath = [helpPrefix, functionName];
         h = help(helpPath);
+        if ~isempty(regexp(h, '^  __Syntax', 'Once', 'LineAnchors'))
+            try
+                thisFile = gitbook.whichFile(helpPath);
+                s = file2char(thisFile);
+                s = regexprep(s, '^% __([^_]+)__\s*$', '% ## $1 ##', 'LineAnchors');
+                char2file(s, thisFile);
+                h = help(helpPath);
+            catch
+                disp(helpPath);
+            end
+        end
         if isempty(h)
             error( 'GitBook:FunctionNotFound', ...
                    'Help not found for this function or method: %s', ...

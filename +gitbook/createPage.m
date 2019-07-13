@@ -37,11 +37,11 @@ a = '';
 list = fieldnames(helpStruct);
 [~, index] = sort(lower(list));
 list = list(index);
-for i = 1 : 3 %numel(list)
+for i = 1 : 4 % numel(list)
     functionName = list{i};
     outputFile = fullfile(folder, [functionName, '.md']);
     c = [ '# ', functionName, ' #', newline( ), ...
-          '> ', descriptionStruct.(functionName), newline( ), ...
+          descriptionStruct.(functionName), newline( ), ...
           helpStruct.(functionName) ];
     char2file(c, outputFile);
     a = [ a, indent, '* [', functionName, ']', ...
