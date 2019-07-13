@@ -145,8 +145,8 @@ Model methods:
 
 ## Alphabetical List of Functions ##
 
-> ### `acf` ###
-> Autocovariance and autocorrelation function for model variables
+### `acf` ###
+Autocovariance and autocorrelation function for model variables
  
 __Syntax__
  
@@ -253,8 +253,8 @@ and 10 years in a quarterly model),
 
 
 
-> ### `addToDatabank` ###
-> Add model quantities to existing or new databank 
+### `addToDatabank` ###
+Add model quantities to existing or new databank 
  
 __Syntax__
  
@@ -312,8 +312,8 @@ __Example__
 
 
 
-> ### `alter` ###
-> Expand or reduce number of parameter variants in model object
+### `alter` ###
+Expand or reduce number of parameter variants in model object
  
 __Syntax__
  
