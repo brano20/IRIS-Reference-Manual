@@ -1,6 +1,6 @@
 function c = createPage(contentsFile, helpPrefix, outputFile)
 
-helpStruct = gitbook.updateContentsFile(contentsFile, helpPrefix);
+[helpStruct, descriptionStruct] = gitbook.updateContentsFile(contentsFile, helpPrefix);
 
 c = help(contentsFile);
 if isempty(c)
@@ -30,7 +30,8 @@ list = list(index);
 for i = 1 : 3 %numel(list)
     name = list{i};
     c = [ c, newline( ), newline( ), ...
-          '### ', name, ' ###', ...
+          '> ### `', name, '` ###', newline( ), ...
+          '> ', descriptionStruct.(name), newline( ), ...
           helpStruct.(name) ];
 end
 

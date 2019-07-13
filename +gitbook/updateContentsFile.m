@@ -1,4 +1,4 @@
-function helpStruct = updateContentsFile(contentsFile, helpPrefix)
+function [helpStruct, descriptionStruct] = updateContentsFile(contentsFile, helpPrefix)
 
 contentsFile = which(contentsFile, '-all');
 if numel(contentsFile)~=1
@@ -11,11 +11,12 @@ contentsFile = regexprep(contentsFile, '%.*', '');
 c = file2char(contentsFile);
 
 helpStruct = struct( );
+descriptionStruct = struct( );
 
-getH1DescriptionFunc = @getH1Description;
+getDescriptionFunc = @getDescription;
 c = regexprep( c, ...
                '^%   (\w+)([ ]+)- .*?$', ...
-               '%   $1$2- ${getH1DescriptionFunc(helpPrefix, $1)}', ...
+               '%   $1$2- ${getDescriptionFunc(helpPrefix, $1)}', ...
                'LineAnchors' );
 
 char2file(c, contentsFile);
@@ -24,7 +25,7 @@ clear(contentsFile);
 return
 
 
-    function h1Description = getH1Description(helpPrefix, functionName)
+    function description = getDescription(helpPrefix, functionName)
         helpPath = [helpPrefix, functionName];
         h = help(helpPath);
         if isempty(h)
@@ -39,8 +40,9 @@ return
             h1(end) = '';
         end
         h2 = regexprep(h, '^.*?\n', '', 'Once');
-        h1Description = regexprep(h1, '^[\w\.]+[ ]+', '');
+        description = regexprep(h1, '^[\w\.]+[ ]+', '');
         helpStruct.(functionName) = h2;
+        descriptionStruct.(functionName) = description;
     end%
 end%
 
