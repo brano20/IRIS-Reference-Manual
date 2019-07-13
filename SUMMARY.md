@@ -8,7 +8,9 @@
 * [Model File Language](structural-modeling/model-file-language.md)
 * [Model Objects](structural-modeling/model-objects/README.md)
   <!-- Start Model -->
-  * [acf](structural-modeling/model-objects/acf.md) 
+  * [acf](structural-modeling/model-objects/acf.md)
+  * [addToDatabank](structural-modeling/model-objects/addToDatabank.md)
+  * [alter](structural-modeling/model-objects/alter.md)
   <!-- End Model -->
 * [Plan Objects](structural-modeling/plan-objects.md)
 

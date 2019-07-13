@@ -1,4 +1,4 @@
-function c = createPage(contentsFile, helpPrefix, outputFile)
+function c = createPage(contentsFile, folder, helpPrefix)
 
 [helpStruct, descriptionStruct] = gitbook.updateContentsFile(contentsFile, helpPrefix);
 
@@ -13,7 +13,7 @@ c = regexprep(c, 'Reference page in.*', '');
 
 c = regexprep( c, ...
                '^  (\w+)([ ]+)- (.*?)$', ...
-               '  [`$1`](#$1)$2 | $3', ...
+               '  [`$1`]($1.md)$2 | $3', ...
                'LineAnchors' );
 
 c = regexprep( c, ...
@@ -24,18 +24,33 @@ c = regexprep( c, ...
 c = [ c, newline( ), newline( ), ...
       '## Alphabetical List of Functions ##' ];
 
+char2file(c, fullfile(folder, 'README.md'));
+
+s = file2char('SUMMARY.md');
+startTag = ['<!-- Start ', contentsFile, ' -->'];
+endTag = ['<!-- End ', contentsFile, ' -->'];
+
+tkn = regexp(s, ['^([ ]*)', startTag, '.*?', endTag], 'Tokens', 'Once', 'LineAnchors');
+indent = tkn{1};
+a = '';
+
 list = fieldnames(helpStruct);
 [~, index] = sort(lower(list));
 list = list(index);
 for i = 1 : 3 %numel(list)
-    name = list{i};
-    c = [ c, newline( ), newline( ), ...
-          '### `', name, '` ###', newline( ), ...
-          descriptionStruct.(name), newline( ), ...
-          helpStruct.(name) ];
+    functionName = list{i};
+    outputFile = fullfile(folder, [functionName, '.md']);
+    c = [ '# ', functionName, ' #', newline( ), ...
+          '> ', descriptionStruct.(functionName), newline( ), ...
+          helpStruct.(functionName) ];
+    char2file(c, outputFile);
+    a = [ a, indent, '* [', functionName, ']', ...
+          '(', outputFile, ')', newline( ) ];
 end
+a = [indent, startTag, newline( ), a, indent, endTag];
+s = regexprep(s, ['^[ ]*', startTag, '.*?', endTag], a, 'Once', 'LineAnchors');
 
-char2file(c, outputFile);
+char2file(s, 'SUMMARY.md');
 
 end%
 

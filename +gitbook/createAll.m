@@ -1,5 +1,7 @@
 function createAll( )
 
-gitbook.createPage('Model', 'Model/', 'structural-modeling/model-objects.md');
+gitbook.createPage( 'Model', ...
+                    'structural-modeling/model-objects', ...
+                    'Model/' );
 
 end%
