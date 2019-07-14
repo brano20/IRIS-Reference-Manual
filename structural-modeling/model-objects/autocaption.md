@@ -27,12 +27,15 @@ order of their appearance in `x`.
  
 ## Options ##
  
-### `Corr='Corr $shock1$ X $shock2$'` ### 
-[ char ] - Template to create
+#### `Corr='Corr $shock1$ X $shock2$'` ####
+[ char ] 
+Template to create
 `$descript$` and `$alias$` for correlation coefficients based on
 `$descript$` and `$alias$` of the underlying shocks.
  
-* `Std='Std $shock$'` [ char ] - Template to create `$descript$` and
+#### `Std='Std $shock$'` ####
+[ char ] 
+Template to create `$descript$` and
 `$alias$` for std deviation based on `$descript$` and `$alias$` of the
 underlying shock.
  
