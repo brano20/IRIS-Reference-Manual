@@ -15,42 +15,42 @@ computed.
  
 ## Output Arguments ##
  
-__`C`__ [ namedmat | numeric ] 
+__`C`__ [ namedmat | numeric ] -
 Covariance matrices.
  
-__`R`__ [ namedmat | numeric ] 
+__`R`__ [ namedmat | numeric ] -
 Correlation matrices.
  
-__`list`__ [ cellstr ] 
+__`list`__ [ cellstr ] -
 List of variables in rows and columns of `C` and `R`.
  
  
 ## Options ##
  
-__`ApplyTo=@all`__ [ cellstr | char | `@all` ] 
+__`ApplyTo=@all`__ [ cellstr | char | `@all` ] -
 List of variables to which the `Filter=` will be applied; `@all` means
 all variables.
  
-__`Contributions=false`__ [ `true` | `false` ] 
+__`Contributions=false`__ [ `true` | `false` ] -
 If `true` the contributions of individual shocks to ACFs will be computed
 and stored in the 5th dimension of the `C` and `R` matrices.
  
-__`Filter=''`__ [ char ] 
+__`Filter=''`__ [ char ] -
 Linear filter that is applied to variables specified by the option
 `ApplyTo=`.
  
-__`NFreq=256`__ [ numeric ] 
+__`NFreq=256`__ [ numeric ] -
 Number of equally spaced frequencies over which the filter in the option
 `Filter=` is numerically integrated.
  
-__`Order=0` __[ numeric ] 
+__`Order=0` __[ numeric ] -
 Order up to which ACF will be computed.
  
-__`MatrixFormat='namedmat'`__ [ `'namedmat'` | `'plain'` ] 
+__`MatrixFormat='namedmat'`__ [ `'namedmat'` | `'plain'` ] -
 Return matrices `C` and `R` as either [`namedmat`](NamedMat) objects
 (matrices with named rows and columns) or plain numeric arrays.
  
-__`Select=@all`__ [ `@all` | char | cellstr ]
+__`Select=@all`__ [ `@all` | char | cellstr ] -
 Return ACF for selected variables only; `@all` means all variables.
  
  
