@@ -12,8 +12,12 @@
   * [addToDatabank](structural-modeling/model-objects/addToDatabank.md)
   * [alter](structural-modeling/model-objects/alter.md)
   * [assign](structural-modeling/model-objects/assign.md)
+  * [autocaption](structural-modeling/model-objects/autocaption.md)
   <!-- End Model -->
 * [Plan Objects](structural-modeling/plan-objects.md)
+* [Posterior Objects](structural-modeling/posterior-objects/README.md)
+  <!-- Start Posterior -->
+  <!-- End Posterior -->
 
 ## Data Management
 

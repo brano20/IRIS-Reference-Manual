@@ -103,4 +103,5 @@ retains periodicities between 4 and 40 periods (this would be between 1
 and 10 years in a quarterly model), 
  
     [C, R] = acf(m, 'Filter=', 'per>=4 & per<=40')
+ 
 
