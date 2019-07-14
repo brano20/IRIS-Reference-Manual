@@ -24,7 +24,7 @@ function will be computed.
  
 ## Options ##
  
-`ApplyTo=@all` [ cellstr | char | `@all` ] - List of variables to which
+__`ApplyTo=@all`__ [ cellstr | char | `@all` ] - List of variables to which
 the `Filter=` will be applied; `@all` means all variables.
  
 `Contributions=false` [ `true` | `false` ] - If `true` the
