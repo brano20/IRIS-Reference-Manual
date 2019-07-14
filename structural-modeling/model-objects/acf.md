@@ -8,42 +8,42 @@ Autocovariance and autocorrelation function for model variables
  
 ## Input Arguments ##
  
-* `model` [ model ] - A solved model object for which the autocorrelation
+`model` [ model ] - A solved model object for which the autocorrelation
 function will be computed.
  
  
 ## Output Arguments ##
  
-* `C` [ namedmat | numeric ] - Covariance matrices.
+`C` [ namedmat | numeric ] - Covariance matrices.
  
-* `R` [ namedmat | numeric ] - Correlation matrices.
+`R` [ namedmat | numeric ] - Correlation matrices.
  
-* `list` [ cellstr ] - List of variables in rows and columns of `C` and
+`list` [ cellstr ] - List of variables in rows and columns of `C` and
 `R`.
  
  
 ## Options ##
  
-* `ApplyTo=@all` [ cellstr | char | `@all` ] - List of variables to which
+`ApplyTo=@all` [ cellstr | char | `@all` ] - List of variables to which
 the `Filter=` will be applied; `@all` means all variables.
  
-* `Contributions=false` [ `true` | `false` ] - If `true` the
+`Contributions=false` [ `true` | `false` ] - If `true` the
 contributions of individual shocks to ACFs will be computed and stored in
 the 5th dimension of the `C` and `R` matrices.
  
-* `Filter=''` [ char ] - Linear filter that is applied to
+`Filter=''` [ char ] - Linear filter that is applied to
 variables specified by the option `ApplyTo=`.
  
-* `NFreq=256` [ numeric ] - Number of equally spaced frequencies over
+`NFreq=256` [ numeric ] - Number of equally spaced frequencies over
 which the filter in the option `Filter=` is numerically integrated.
  
-* `Order=0` [ numeric ] - Order up to which ACF will be computed.
+`Order=0` [ numeric ] - Order up to which ACF will be computed.
  
-* `MatrixFormat='namedmat'` [ `'namedmat'` | `'plain'` ] - Return
+`MatrixFormat='namedmat'` [ `'namedmat'` | `'plain'` ] - Return
 matrices `C` and `R` as either [`namedmat`](NamedMat) objects (matrices
 with named rows and columns) or plain numeric arrays.
  
-* `Select=@all` [ `@all` | char | cellstr ] - Return ACF for selected
+`Select=@all` [ `@all` | char | cellstr ] - Return ACF for selected
 variables only; `@all` means all variables.
  
  
