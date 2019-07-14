@@ -11,7 +11,7 @@ Create captions for reporting model variables or parameters
 * `m` [ model ] - Model object.
  
 * `x` [ cellstr | struct | Posterior ] - A cell array of model names, a
-struct with model names, or a [`poster`](../posterior-objects/README.md)
+struct with model names, or a [`Posterior`](../posterior-objects/README.md)
 object.
  
 * `template` [ char ] - Prescription for how to create the caption; see
@@ -27,7 +27,8 @@ order of their appearance in `x`.
  
 ## Options ##
  
-* `Corr='Corr $shock1$ X $shock2$'` [ char ] - Template to create
+### `Corr='Corr $shock1$ X $shock2$'` ### 
+[ char ] - Template to create
 `$descript$` and `$alias$` for correlation coefficients based on
 `$descript$` and `$alias$` of the underlying shocks.
  
