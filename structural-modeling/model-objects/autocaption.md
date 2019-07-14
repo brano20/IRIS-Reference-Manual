@@ -27,7 +27,7 @@ order of their appearance in `x`.
  
 ## Options ##
  
-#### Corr='Corr $shock1$ X $shock2$'
+##### `Corr='Corr $shock1$ X $shock2$'`
  
 [ char ] 
  
@@ -35,7 +35,7 @@ Template to create
 `$descript$` and `$alias$` for correlation coefficients based on
 `$descript$` and `$alias$` of the underlying shocks.
  
-#### Std='Std $shock$'
+##### `Std='Std $shock$'`
  
 [ char ] 
  
