@@ -25,7 +25,7 @@ Model methods:
 ----------------|--------------------
   [`addToDatabank`](addToDatabank.md)              | Add model quantities to existing or new databank 
   [`autocaption`](autocaption.md)                | Create captions for reporting model variables or parameters
-  [`autoswap`](autoswap.md)                   | Get or set pairs of names in dynamic and steady autoswap
+  [`autoswap`](autoswap.md)                   | Inquire about or assign autoswap pairs
   [`beenSolved`](beenSolved.md)                 | True if first-order solution has been successfully calculated
   [`chkredundant`](chkredundant.md)               | Check for redundant shocks and/or parameters
   [`comment`](comment.md)                    | Get or set user comments in IRIS object
@@ -42,6 +42,7 @@ Model methods:
   [`isname`](isname.md)                     | True for valid names of variables, parameters, or shocks in model object
   [`isstationary`](isstationary.md)               | True if model or specified combination of variables is stationary
   [`length`](length.md)                     | Number of parameter variants within model object
+  [`changeLogStatus`](changeLogStatus.md)            | Change log status of model variables
   [`omega`](omega.md)                      | Get or set the covariance matrix of shocks
   [`sspace`](sspace.md)                     | State-space matrices describing the model solution
   [`system`](system.md)                     | System matrices for unsolved model

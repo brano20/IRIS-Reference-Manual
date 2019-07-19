@@ -8,17 +8,17 @@ Autocovariance and autocorrelation function for model variables
  
 ## Input Arguments ##
  
-__`model`__ [ model ] –
+__`model`__ [ model ] ?�
 A solved model object for which the autocorrelation function will be
 computed.
  
  
 ## Output Arguments ##
  
-__`C`__ [ namedmat | numeric ] –
+__`C`__ [ namedmat | numeric ] ?
 Covariance matrices.
  
-__`R`__ [ namedmat | numeric ] –
+__`R`__ [ namedmat | numeric ] � 
 Correlation matrices.
  
 __`list`__ [ cellstr ] –
