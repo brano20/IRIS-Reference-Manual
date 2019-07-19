@@ -1,9 +1,9 @@
 # Model Objects #
  
 Model objects (objects of class `Model`) are created from a model file.
-Model files are written in [IRIS Model File Language](Model-File-Language.md). After a model
-object is created in the Matlab workspace, you can combine model
-functions and standard Matlab functions to work with it in your own
+Model files are written in [IRIS Model File Language](../model-file-language/README.md). 
+After a model object is created in the Matlab workspace, you can combine
+model functions and standard Matlab functions to work with it in your own
 m-files (scripts, functions, etc.): assign or estimate model parameters,
 run model simulations, calculate its stochastic properties, etc.
  

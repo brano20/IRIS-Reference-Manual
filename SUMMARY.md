@@ -20,6 +20,7 @@
 ## Data Management
 
 * [Introduction](data-management/introduction.md)
+* [NamedMat Objects](data-management/namedmat-objects/README.md)
 
 ## Time Series Modeling
 
