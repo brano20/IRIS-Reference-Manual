@@ -31,7 +31,13 @@ startTag = ['<!-- Start ', contentsFile, ' -->'];
 endTag = ['<!-- End ', contentsFile, ' -->'];
 
 tkn = regexp(s, ['^([ ]*)', startTag, '.*?', endTag], 'Tokens', 'Once', 'LineAnchors');
-indent = tkn{1};
+try
+    indent = tkn{1};
+catch
+    error( 'CreatePage:MissingStartEnd', ...
+           'Missing Start and/or End tags for %s ', ...
+           contentsFile );
+end
 a = '';
 
 list = fieldnames(helpStruct);
