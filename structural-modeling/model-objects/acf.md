@@ -27,6 +27,8 @@ List of variables in rows and columns of `C` and `R`.
  
 ## Options ##
  
+### ApplyTo='all' ###
+ 
 ### `ApplyTo='all'` ###
 [ char | cellstr | string | `@all` ]
  
