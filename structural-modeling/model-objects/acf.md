@@ -15,7 +15,7 @@ computed.
  
 ## Output Arguments ##
  
-__`C`__ [ namedmat | numeric ] ?
+__`C`__ [ namedmat | numeric ] 
 Covariance matrices.
  
 __`R`__ [ namedmat | numeric ] ¿ 
@@ -26,6 +26,11 @@ List of variables in rows and columns of `C` and `R`.
  
  
 ## Options ##
+ 
+### `ApplyTo='all'` ###
+[ char | cellstr | string | `@all` ]
+ 
+List of variables
  
 __`ApplyTo=@all`__ [ cellstr | char | `@all` ] â€“
 List of variables to which the `Filter=` will be applied; `@all` means
