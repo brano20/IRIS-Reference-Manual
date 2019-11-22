@@ -17,9 +17,7 @@ asdfasdfaf \_\_`model`\_\_
 `model` \[ Model \| XXX \]
 
 {% hint style="info" %}
-`model`
-
-\[ Model \] 
+`model`\[ Model \] 
 
 Solved model object
 {% endhint %}
