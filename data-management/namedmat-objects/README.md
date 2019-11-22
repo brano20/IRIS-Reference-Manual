@@ -1,2 +1,0 @@
-# NamedMat Objects #
-
