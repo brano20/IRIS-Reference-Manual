@@ -1,6 +1,8 @@
-# acf
+---
+description: Autocovariance and autocorrelation function for model variables
+---
 
-Autocovariance and autocorrelation function for model variables
+# acf
 
 ## Syntax
 
