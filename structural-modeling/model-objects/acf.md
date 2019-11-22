@@ -16,7 +16,7 @@ asdfasdfaf \_\_`model`\_\_
 
 `model` \[ Model \| XXX \]
 
-{% hint style="info" %}
+{% hint %}
 `model`\[ Model \] 
 
 Solved model object
